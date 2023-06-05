@@ -1,0 +1,22 @@
+name: Test
+
+on:
+  push:
+    branches:
+      - master
+    paths-ignore:
+      - '**.md'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up JDK 17
+        uses: actions/setup-java@v2
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+      - name: Check out code
+        uses: actions/checkout@v2
+      - name: Test with Gradle
+        run: ./gradlew test
