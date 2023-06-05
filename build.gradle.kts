@@ -29,8 +29,8 @@ publishing {
         maven {
             url = uri("https://repo.skyslycer.de/releases/")
             credentials {
-                username = System.getenv("MAVEN_USERNAME") ?: ""
-                password = System.getenv("MAVEN_PASSWORD") ?: ""
+                username = System.getenv("REPO_USERNAME") ?: ""
+                password = System.getenv("REPO_PASSWORD") ?: ""
             }
         }
     }
