@@ -1,11 +1,13 @@
 name: Publish to Skyslycer Repository
 
 on:
-  push:
+  workflow_run:
+    workflows:
+      - 'Test'
     branches:
       - master
-    paths-ignore:
-      - '**.md'
+    types:
+      - 'completed'
 
 jobs:
   build:
