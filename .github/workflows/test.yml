@@ -19,5 +19,7 @@ jobs:
           distribution: 'temurin'
       - name: Check out code
         uses: actions/checkout@v2
+      - name: Give execute permissions to Gradle wrapper
+        run: chmod +x gradlew
       - name: Test with Gradle
         run: ./gradlew test
