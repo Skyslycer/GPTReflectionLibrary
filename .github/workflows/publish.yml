@@ -23,6 +23,8 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: 17
+      - name: Give execute permissions to Gradle wrapper
+        run: chmod +x gradlew
       - name: Build with Gradle
         run: ./gradlew clean build --no-daemon --stacktrace
       - name: Publish to Repository
